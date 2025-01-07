@@ -1,8 +1,5 @@
-import * as path from "https://deno.land/std@0.95.0/path/mod.ts";
-import {
-  assertEquals,
-  assertThrows,
-} from "https://deno.land/std@0.95.0/testing/asserts.ts";
+import * as path from "jsr:@std/path@1.0.8";
+import { assertEquals, assertThrows } from "jsr:@std/assert@1.0.10";
 import { ImportMap, resolveImportMap, resolveModuleSpecifier } from "./mod.ts";
 import { isImportMap } from "./_util.ts";
 

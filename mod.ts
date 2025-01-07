@@ -176,6 +176,12 @@ function resolveImportsMatch(
       }
 
       try {
+        if (
+          resolutionResult.startsWith("npm:") ||
+          resolutionResult.startsWith("jsr:")
+        ) {
+          return resolutionResult + afterPrefix;
+        }
         const url = new URL(afterPrefix, resolutionResult);
         if (!isURL(url)) {
           throw new TypeError(`url must be an URL.`);
